@@ -6,7 +6,7 @@ const apiRoutes = require('./routes/api');
 const app = express();
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://sivazeno:zeno123@cluster0.d8wiw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://sivazeno:<db_password>@cluster0.d8wiw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -14,6 +14,8 @@ mongoose.connect('mongodb+srv://sivazeno:zeno123@cluster0.d8wiw.mongodb.net/?ret
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
 });
+
+
 app.get('/', (req, res) => {
     res.send('Welcome to the Mentor-Student API!');
 });
