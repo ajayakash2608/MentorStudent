@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Mentor = require('../models/mentorModel');
-const Student = require('../models/studentModel');
+const Mentor = require('../models/mentor');
+const Student = require('../models/student');
 
 router.post('/mentor', async (req, res) => {
     try {
